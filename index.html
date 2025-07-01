@@ -39,34 +39,157 @@
             cursor: none;
         }
 
+        /* Light Mode */
+        body.light-mode {
+            background: #f8f9fa;
+            color: #212529; /* Change text color to black */
+        }
+
+        body.light-mode .navbar {
+            background: rgba(255, 255, 255, 0.8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .navbar a,
+        body.light-mode .hero-title,
+        body.light-mode .hero-subtitle,
+        body.light-mode .hero-description,
+        body.light-mode .section-title,
+        body.light-mode .project-card h3,
+        body.light-mode .project-card p,
+        body.light-mode .tech-tag,
+        body.light-mode .experience-description,
+        body.light-mode .highlight-list li,
+        body.light-mode .contact-item span,
+        body.light-mode .contact-form label,
+        body.light-mode .footer,
+        body.light-mode .social-link {
+            color: #212529; /* Ensure all text is visible */
+        }
+        body.light-mode .project-card,
+        body.light-mode .experience-card {
+            background: #ffffff; /* Solid white background */
+            color: #212529;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-mode .project-card h3,
+        body.light-mode .experience-card .experience-company,
+        body.light-mode .experience-card .experience-role {
+            color: #212529;
+        }
+
+        body.light-mode .project-card p,
+        body.light-mode .experience-description,
+        body.light-mode .highlight-list li {
+            color: #333333;
+        }
+
+        body.light-mode .tech-tag,
+        body.light-mode .experience-tech-tag {
+            background: rgba(33, 37, 41, 0.1);
+            color: #212529;
+            border-color: rgba(33, 37, 41, 0.2);
+        }
+
+        body.light-mode .tech-tag:hover,
+        body.light-mode .experience-tech-tag:hover {
+            background: #212529;
+            color: #ffffff;
+        }
+        body.light-mode .cursor {
+            background: #212529;
+        }
+
+        body.light-mode .cursor-trail {
+            background: rgba(33, 37, 41, 0.4);
+        }
+
+        body.light-mode .btn-primary {
+            background: #212529;
+            color: #f8f9fa;
+        }
+
+        body.light-mode .btn-secondary {
+            background: transparent;
+            color: #212529;
+            border: 2px solid rgba(33, 37, 41, 0.3);
+        }
+
+        body.light-mode .tech-tag {
+            background: rgba(33, 37, 41, 0.2); /* Darker background for tech tags */
+        }
+
+        body.light-mode .footer {
+            background: #e9ecef; /* Light footer background */
+        }
+
+        /* Light Mode - About Me Section */
+        body.light-mode .about-text p {
+            color: #212529; /* Change text color to black */
+        }
+
+        body.light-mode .skills-grid .skill-card {
+            background: rgba(33, 37, 41, 0.1); /* Darker background for skill cards */
+            color: #212529; /* Change text color to black */
+        }
+
+        body.light-mode .skills-grid .skill-card:hover {
+            background: #212529; /* Darker hover background */
+            color: #f8f9fa; /* White text on hover */
+        }
+
+        /* Light Mode - Education Section */
+        body.light-mode .timeline-title {
+            color: #212529; /* Change title text color to black */
+        }
+
+        body.light-mode .timeline-subtitle {
+            color: #667eea; /* Accent color for subtitles */
+        }
+
+        body.light-mode .timeline-description {
+            color: #212529; /* Change description text color to black */
+        }
+
+        body.light-mode .achievement-tag {
+            background: rgba(33, 37, 41, 0.1); /* Darker background for tags */
+            color: #212529; /* Change text color to black */
+        }
+
+        body.light-mode .achievement-tag:hover {
+            background: #212529; /* Darker hover background */
+            color: #f8f9fa; /* White text on hover */
+        }
+
         /* Custom Cursor */
         .cursor {
             position: fixed;
-            width: 20px;
-            height: 20px;
-            background: var(--primary-gradient);
+            width: 15px; /* Reduced size for better visibility */
+            height: 15px;
+            background: var(--accent-color);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
-            transition: var(--transition-smooth);
+            transition: transform 0.1s ease-out; /* Faster transition */
             transform: translate(-50%, -50%);
         }
 
         .cursor-trail {
             position: fixed;
-            width: 6px;
-            height: 6px;
+            width: 10px; /* Reduced size for trails */
+            height: 10px;
             background: rgba(102, 126, 234, 0.4);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9998;
-            transition: all 0.1s ease;
+            transition: transform 0.1s ease-out, opacity 0.1s ease-out;
         }
 
         .cursor.expand {
-            width: 60px;
-            height: 60px;
+            width: 30px; /* Adjusted size for hover effect */
+            height: 30px;
             background: rgba(102, 126, 234, 0.2);
             border: 2px solid var(--accent-color);
         }
@@ -515,6 +638,41 @@
             left: 0;
         }
 
+        .profile-picture {
+            width: 200px; /* Adjust size as needed */
+            height: 200px;
+            border-radius: 50%; /* Makes the image circular */
+            object-fit: cover; /* Ensures the image fits within the circle */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+            transition: var(--transition-smooth); /* Smooth transition for hover effects */
+        }
+
+        .profile-picture:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        }
+
+        .profile-picture-large {
+            width: 500px; /* Adjust width as needed */
+            height: 400px; /* Adjust height as needed */
+            border-radius: 20px; /* Slightly rounded corners */
+            object-fit: cover; /* Ensures the image fits within the rectangle */
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow */
+            transition: var(--transition-smooth); /* Smooth transition for hover effects */
+        }
+
+        .profile-picture-large:hover {
+            transform: scale(1.26); /* Slight zoom effect on hover */
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem; /* Add spacing below the profile picture */
+        }
+
         /* Revolutionary Projects Section */
         .projects {
             background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
@@ -575,6 +733,11 @@
             gap: 0.8rem;
             margin-bottom: 2rem;
         }
+        .project-links {
+             display: flex;
+             gap: 1rem; /* Add spacing between buttons */
+             flex-wrap: wrap; /* Optional: wrap if screen too small */
+        }           
 
         .tech-tag {
             background: rgba(102, 126, 234, 0.2);
@@ -593,22 +756,28 @@
             transform: scale(1.1);
         }
 
-        /* Contact Section */
+      /* Contact Section */
         .contact {
             background: radial-gradient(ellipse at center, rgba(118, 75, 162, 0.15) 0%, var(--dark-bg) 70%);
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            align-items: start;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .contact-info {
-            opacity: 0;
-            transform: translateX(-50px);
+            opacity: 1;
+            transform: translateX(0);
             transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
 
         .contact-info.visible {
@@ -625,12 +794,14 @@
             padding: 1rem;
             border-radius: 15px;
             cursor: pointer;
+            justify-content: center;
+            min-width: 300px;
         }
 
         .contact-item:hover {
             background: var(--glass-bg);
             backdrop-filter: blur(10px);
-            transform: translateX(10px);
+            transform: scale(1.05);
         }
 
         .contact-item i {
@@ -639,22 +810,23 @@
             width: 30px;
         }
 
+        /* Contact Form */
         .contact-form {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            padding: 3rem;
+            padding: 4rem; /* Increased padding for larger form */
             border-radius: 20px;
-            opacity: 0;
-            transform: translateX(50px);
-            transition: var(--transition-smooth);
-        }
-
-        .contact-form.visible {
             opacity: 1;
             transform: translateX(0);
+            transition: var(--transition-smooth);
+            width: 100%; /* Full width */
+            max-width: 800px; /* Increased max width */
+            margin: 0 auto; /* Center the form */
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2); /* Add shadow for emphasis */
         }
 
+        /* Form Group */
         .form-group {
             margin-bottom: 2rem;
         }
@@ -664,6 +836,7 @@
             margin-bottom: 0.8rem;
             font-weight: 600;
             color: var(--light-text);
+            font-size: 1.2rem; /* Larger font size for labels */
         }
 
         .form-group input,
@@ -677,6 +850,7 @@
             font-size: 1rem;
             transition: var(--transition-smooth);
             backdrop-filter: blur(10px);
+            font-size: 1.1rem; /* Larger font size for inputs */
         }
 
         .form-group input:focus,
@@ -685,6 +859,28 @@
             border-color: var(--accent-color);
             box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
             background: rgba(255, 255, 255, 0.1);
+        }
+
+        textarea {
+            height: 150px; /* Increased height for textarea */
+            resize: none; /* Prevent resizing */
+        }
+
+        /* Submit Button */
+        .contact-form button {
+            width: 100%; /* Full width button */
+            padding: 16px 0; /* Adjust padding */
+            font-size: 1.2rem; /* Larger font size */
+            border-radius: 50px;
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
         }
 
         /* Enhanced Footer */
@@ -828,6 +1024,368 @@
             opacity: 1;
             transform: scale(1);
         }
+        /* Enhanced Sections */
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        /* Education Timeline Section */
+        .education {
+            background: radial-gradient(ellipse at center, rgba(255, 107, 107, 0.1) 0%, transparent 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-gradient);
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: var(--transition-smooth);
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            margin-right: 60px;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: auto;
+            margin-left: 60px;
+            text-align: left;
+        }
+
+        .timeline-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            width: 45%;
+            position: relative;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+            border-color: var(--accent-color);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -70px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -70px;
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            top: 25px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::after {
+            right: -30px;
+            border-left-color: var(--glass-border);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::after {
+            left: -30px;
+            border-right-color: var(--glass-border);
+        }
+
+        .timeline-date {
+            display: inline-block;
+            background: var(--accent-gradient);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--light-text);
+        }
+
+        .timeline-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-description {
+            color: rgba(248, 249, 250, 0.8);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .achievement-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .achievement-tag {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .achievement-tag:hover {
+            background: #ff6b6b;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Experience 3D Cards Section */
+        .experience {
+            background: radial-gradient(ellipse at center, rgba(78, 205, 196, 0.1) 0%, transparent 70%);
+            perspective: 1000px;
+        }
+
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .experience-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            transform-style: preserve-3d;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(50px) rotateX(20deg);
+        }
+
+        .experience-card.visible {
+            opacity: 1;
+            transform: translateY(0) rotateX(0deg);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 30px 60px rgba(78, 205, 196, 0.3);
+        }
+
+        .experience-header {
+            background: var(--accent-gradient);
+            background-size: 400% 400%;
+            animation: gradientFlow 4s ease-in-out infinite;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: rotate 6s linear infinite;
+        }
+
+        .experience-company {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-role {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+            position: relative;
+            z-index: 2;
+        }
+
+        .experience-duration {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            z-index: 2;
+        }
+
+        .experience-body {
+            padding: 2.5rem;
+        }
+
+        .experience-description {
+            color: rgba(248, 249, 250, 0.9);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .experience-highlights {
+            margin-bottom: 2rem;
+        }
+
+        .experience-highlights h4 {
+            color: var(--accent-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .highlight-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .highlight-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+            color: rgba(248, 249, 250, 0.8);
+            line-height: 1.6;
+        }
+
+        .highlight-list li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .experience-tech-tag {
+            background: rgba(78, 205, 196, 0.2);
+            color: #4ecdc4;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            transition: var(--transition-smooth);
+        }
+
+        .experience-tech-tag:hover {
+            background: #4ecdc4;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        /* Floating Achievement Badges */
+        .floating-badge {
+            position: absolute;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 1rem;
+            font-size: 2rem;
+            animation: floatingBadge 8s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .badge-1 {
+            top: 15%;
+            right: 5%;
+            animation-delay: 0s;
+        }
+
+        .badge-2 {
+            bottom: 20%;
+            left: 8%;
+            animation-delay: -2s;
+        }
+
+        .badge-3 {
+            top: 40%;
+            left: 5%;
+            animation-delay: -4s;
+        }
+
+        @keyframes floatingBadge {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-20px) rotate(5deg) scale(1.1); }
+            50% { transform: translateY(0px) rotate(0deg) scale(1); }
+            75% { transform: translateY(-10px) rotate(-3deg) scale(1.05); }
+        }
     </style>
 </head>
 <body>
@@ -843,7 +1401,7 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <div class="logo">Daryl</div>
+            <div class="logo"></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -858,12 +1416,17 @@
         <div class="hero-bg"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Hey! I'm Daryl Tan <br></h1>
-                <p class="hero-subtitle">NTU EEE Graduate •</p>
-                <p class="hero-description"> Here, you can check out what I'm working on. I try my best to create things with ❤. Bridging the gap between cutting-edge hardware and intelligent software solutions. Passionate about creating revolutionary products that shape the future of technology.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">Explore Work</a>
-                    <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                <div class="hero-visual">
+                    <img src="img/6278173968712188975.jpg" alt="Daryl Tan" class="profile-picture-large">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Hey! I'm Daryl Tan</h1>
+                    <p class="hero-subtitle">NTU EEE Graduate</p>
+                    <p class="hero-description">Here, you can check out what I'm working on. I try my best to create things. Bridging the gap between cutting-edge hardware and intelligent software solutions. I believe that learning should be through understanding rather than memorizing.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn btn-primary">Explore Work</a>
+                        <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -889,9 +1452,7 @@
             <h2 class="section-title fade-in">About Me</h2>
             <div class="about-content">
                 <div class="about-visual">
-                    <div class="morphing-shape scale-in">
-                        👨‍💻
-                    </div>
+                    <img src="img\6278173968712188975.jpg" alt="Daryl Tan" class="profile-picture">
                 </div>
                 <div class="about-text">
                     <p class="slide-right">I'm an Electrical & Electronic Engineering Graduate from Nanyang Technological University, combining deep technical knowledge with innovative software development skills.</p>
@@ -916,6 +1477,42 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="section education">
+    <div class="container">
+        <h2 class="section-title fade-in">Education</h2>
+        <div class="timeline-container">
+            <div class="timeline-line"></div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <span class="timeline-date">2022 - 2025</span>
+                    <h3 class="timeline-title">Nanyang Technological University, Singapore</h3>
+                    <h4 class="timeline-subtitle">Bachelor of Electrical & Electronic Engineering</h4>
+                    <p class="timeline-description">Graduated with Honours (Distinction), Dean’s List (AY 23/24), specialized in software applications for electronics, robotics, and AI integration.</p>
+                    <div class="achievement-tags">
+                        <span class="achievement-tag">Dean's List</span>
+                        <span class="achievement-tag">MLDA Club Sub-Committee</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item fade-in">
+                <div class="timeline-content">
+                    <span class="timeline-date">2016 - 2019</span>
+                    <h3 class="timeline-title">Temasek Polytechnic, Singapore</h3>
+                    <h4 class="timeline-subtitle">Diploma in Aerospace Electronics</h4>
+                    <p class="timeline-description">Graduated with Merit and Diploma Plus in Transcultural Studies. Strong focus on embedded systems, hardware programming, and simulator maintenance.</p>
+                    <div class="achievement-tags">
+                        <span class="achievement-tag">Diploma with Merit</span>
+                        <span class="achievement-tag">Head of Events, Stargazing Club</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Projects Section -->
     <section id="projects" class="section projects">
         <div class="container">
@@ -931,8 +1528,9 @@
                         <span class="tech-tag">Game Design</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                        <button class="btn btn-secondary" disabled>Demo available upon request 📩</button>
+
+                        <button onclick="window.open('https://projectgenesistbate.itch.io/project-genesis-the-beginning-after-the-end', '_blank')" class="btn btn-secondary">Itch.io</button>
                     </div>
                 </div>
 
@@ -947,8 +1545,9 @@
                         <span class="tech-tag">OpenCV</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                        <button class="btn btn-secondary" disabled>Demo available upon request 📩</button>
+
+                        <button onclick="window.open('https://github.com/BotDoge1202/Face-Detection-Open-CV-', '_blank')" class="btn btn-secondary">GitHub</button>
                     </div>
                 </div>
 
@@ -963,8 +1562,7 @@
                         <span class="tech-tag">Android Studio</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                        <button class="btn btn-secondary" disabled>Demo available upon request 📩</button>
                     </div>
                 </div>
 
@@ -979,51 +1577,166 @@
                         <span class="tech-tag">Scikit-learn</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="project-link">Live Demo</a>
-                        <a href="#" class="project-link">GitHub</a>
+                        <button class="btn btn-secondary" disabled>Demo available upon request 📩</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section contact">
-        <div class="container">
-            <h2 class="section-title fade-in">Contact Me</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i>📧</i>
-                        <span>daryl_tan_98@hotmail.com</span>
+    <section id="experience" class="section experience">
+    <div class="container">
+        <h2 class="section-title fade-in">Experience</h2>
+        <div class="experience-grid">
+
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <span class="experience-company">Codetism Co., Ltd (Thailand)</span>
+                    <span class="experience-role">Front-end Developer (Flutter)</span>
+                    <span class="experience-duration">May – Jul 2024</span>
+                </div>
+                <div class="experience-body">
+                    <p class="experience-description">Engineered cross-platform Flutter applications with secure RESTful integrations using Spring Boot and MySQL.</p>
+                    <div class="experience-highlights">
+                        <h4>Highlights:</h4>
+                        <ul class="highlight-list">
+                            <li>Implemented secure login with role-based access control.</li>
+                            <li>Built scalable UI components for both Android/iOS.</li>
+                            <li>Used Mockito and Insomnia for test-driven development.</li>
+                        </ul>
                     </div>
-                    <div class="contact-item">
-                        <i>📍</i>
-                        <span>Singapore</span>
-                    </div>
-                    <div class="contact-item">
-                        <i>💼</i>
-                        <span>Open to Opportunities</span>
+                    <div class="experience-tech">
+                        <span class="experience-tech-tag">Flutter</span>
+                        <span class="experience-tech-tag">Spring Boot</span>
+                        <span class="experience-tech-tag">MySQL</span>
+                        <span class="experience-tech-tag">Mockito</span>
                     </div>
                 </div>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Hi!"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
             </div>
+
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <span class="experience-company">NTU EEE Lab</span>
+                    <span class="experience-role">Teaching Lab Assistant</span>
+                    <span class="experience-duration">2023 – 2025</span>
+                </div>
+                <div class="experience-body">
+                    <p class="experience-description">Guided undergraduate students in semiconductor and physics labs to bridge theory and hands-on experimentation.</p>
+                    <div class="experience-highlights">
+                        <h4>Highlights:</h4>
+                        <ul class="highlight-list">
+                            <li>Improved student comprehension with real-world demonstrations.</li>
+                            <li>Maintained and troubleshooted lab equipment and sensors.</li>
+                            <li>Ensured safety protocols across multiple lab sections.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="experience-tech-tag">Communication</span>
+                        <span class="experience-tech-tag">Oscilloscope</span>
+                        <span class="experience-tech-tag">Multimeters</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="experience-card fade-in">
+                <div class="experience-header">
+                    <span class="experience-company">RSAF</span>
+                    <span class="experience-role">Aircraft Technician</span>
+                    <span class="experience-duration">2021 – 2022</span>
+                </div>
+                <div class="experience-body">
+                    <p class="experience-description">Assisted in aircraft maintenance operations, significantly improving turnaround times and part replacement accuracy.</p>
+                    <div class="experience-highlights">
+                        <h4>Highlights:</h4>
+                        <ul class="highlight-list">
+                            <li>Reduced aircraft prep time by 15%.</li>
+                            <li>Replaced over 20 components during service period.</li>
+                            <li>Coordinated with senior technicians to streamline maintenance.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="experience-tech-tag">Rivet Tools</span>
+                        <span class="experience-tech-tag">Torque Wrench</span>
+                        <span class="experience-tech-tag">Aircraft Paneling</span>
+                    </div>
+                </div>
+            </div>
+            <div class="experience-card fade-in">
+    <div class="experience-header">
+        <span class="experience-company">Aviation Safety and Training</span>
+        <span class="experience-role">Simulator Maintenance Technician</span>
+        <span class="experience-duration">2018 – 2020</span>
+    </div>
+    <div class="experience-body">
+        <p class="experience-description">Ensured seamless operation of flight simulators through regular maintenance, troubleshooting, and system upgrades. Implemented data tracking for parts and performance logs.</p>
+        <div class="experience-highlights">
+            <h4>Highlights:</h4>
+            <ul class="highlight-list">
+                <li>Reduced simulator downtime by over 30 hours/month through preventive fixes.</li>
+                <li>Developed Excel-based tracking system for inventory and maintenance logs.</li>
+                <li>Collaborated with technicians to resolve over 100 system issues across hardware/software layers.</li>
+            </ul>
         </div>
-    </section>
+        <div class="experience-tech">
+            <span class="experience-tech-tag">Excel</span>
+            <span class="experience-tech-tag">Troubleshooting</span>
+            <span class="experience-tech-tag">Sim Software</span>
+            <span class="experience-tech-tag">Hardware Diagnostics</span>
+        </div>
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+  <!-- Contact Section -->
+<section id="contact" class="section contact">
+  <div class="container">
+    <h2 class="section-title fade-in">Let's Connect</h2>
+    <div class="contact-content">
+      <div class="contact-info slide-left">
+        <p style="font-size: 1.2rem; margin-bottom: 2rem; text-align: center;">
+          Interested in working together or have a question? Drop me a message — I'm always open to meaningful collaborations, especially for social good.
+        </p>
+        <div class="contact-item">
+          <i>📧</i>
+          <span><strong>Email:</strong> daryl_tan_98@hotmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i>📍</i>
+          <span><strong>Location:</strong> Singapore</span>
+        </div>
+        <div class="contact-item">
+          <i>💼</i>
+          <span><strong>Status:</strong> Open to Opportunities</span>
+        </div>
+        <div class="contact-item">
+          <i>🔗</i>
+          <span><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/daryl-tan-26772a285" target="_blank" style="color: #667eea;">linkedin.com/in/daryl-tan</a></span>
+        </div>
+      </div>
+
+      <form class="contact-form slide-right" action="https://formspree.io/f/mblywpzv" method="POST">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name..." required />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="_replyto" placeholder="Enter your email..." required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="What's on your mind?" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message ✉️</button>
+      </form>
+    </div>
+  </div>
+</section>
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -1035,13 +1748,14 @@
         </div>
     </footer>
 
-    <script>
-        // Advanced Custom Cursor
+    <script>    
+        // Custom Cursor
         const cursor = document.querySelector('.cursor');
         const trails = [];
-        
+        const trailCount = 5; // Reduced number of trails for better performance
+
         // Create cursor trails
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < trailCount; i++) {
             const trail = document.createElement('div');
             trail.className = 'cursor-trail';
             document.body.appendChild(trail);
@@ -1057,20 +1771,19 @@
         });
 
         function animateCursor() {
-            cursorX += (mouseX - cursorX) ;
-            cursorY += (mouseY - cursorY);
-            
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-            
+            // Smoothly update cursor position
+            cursorX += (mouseX - cursorX) * 0.9; // Faster movement
+            cursorY += (mouseY - cursorY) * 0.9;
+
+            cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+
+            // Update trails with a delay effect
             trails.forEach((trail, index) => {
-                const delay = index * 0.02;
-                setTimeout(() => {
-                    trail.style.left = cursorX + 'px';
-                    trail.style.top = cursorY + 'px';
-                }, delay * 1000);
+                const delay = index * 0.05; // Reduced delay for faster trail responsiveness
+                trail.style.transform = `translate(${cursorX}px, ${cursorY}px) scale(${1 - delay})`;
+                trail.style.opacity = `${1 - delay}`;
             });
-            
+
             requestAnimationFrame(animateCursor);
         }
         animateCursor();
@@ -1239,6 +1952,31 @@
             document.querySelectorAll('.particle').forEach(particle => {
                 particle.style.animationDelay = Math.random() * 20 + 's';
             });
+        });
+
+        // Light/Dark Mode Toggle with Sun/Moon Icon
+        const toggleButton = document.createElement('div');
+        toggleButton.className = 'toggle-mode';
+        toggleButton.innerHTML = '🌙'; // Default to moon icon
+        toggleButton.style.position = 'fixed';
+        toggleButton.style.bottom = '20px';
+        toggleButton.style.right = '20px';
+        toggleButton.style.width = '40px';
+        toggleButton.style.height = '40px';
+        toggleButton.style.borderRadius = '50%';
+        toggleButton.style.background = 'rgba(0, 0, 0, 0.8)';
+        toggleButton.style.color = 'white';
+        toggleButton.style.display = 'flex';
+        toggleButton.style.alignItems = 'center';
+        toggleButton.style.justifyContent = 'center';
+        toggleButton.style.cursor = 'pointer';
+        toggleButton.style.zIndex = '1000';
+        toggleButton.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
+        document.body.appendChild(toggleButton);
+
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            toggleButton.innerHTML = document.body.classList.contains('light-mode') ? '☀️' : '🌙'; // Switch icon
         });
     </script>
 </body>
