@@ -168,7 +168,7 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
     submitBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
     
     setTimeout(() => {
-        submitBtn.textContent = 'Message Sent! ✅';
+        submitBtn.textContent = 'Message Sent!';
         setTimeout(() => {
             submitBtn.textContent = originalText;
             submitBtn.style.background = '';
