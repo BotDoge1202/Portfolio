@@ -210,6 +210,7 @@ toggleButton.innerHTML = '🌙'; // Default to moon icon
 toggleButton.style.position = 'fixed';
 toggleButton.style.bottom = '20px';
 toggleButton.style.right = '20px';
+toggleButton.style.backgroundColor='inherit';
 toggleButton.style.width = '40px';
 toggleButton.style.height = '40px';
 toggleButton.style.borderRadius = '50%';
@@ -232,12 +233,13 @@ function toggleNavbarVisibility() {
     const bottomNavbar = document.querySelector('.bottom-navbar');
     const toggleNavbarButton = document.getElementById('toggleNavbar');
 
-    if (bottomNavbar.classList.contains('minimized')) {
-        bottomNavbar.classList.remove('minimized');
-        toggleNavbarButton.textContent = '⬅'; // Arrow pointing right
+    if (!bottomNavbar.classList.contains('minimized')) {
+       bottomNavbar.classList.add('minimized');
+        toggleNavbarButton.textContent = '➡'; 
+        
     } else {
-        bottomNavbar.classList.add('minimized');
-        toggleNavbarButton.textContent = '➡'; // Arrow pointing left
+        bottomNavbar.classList.remove('minimized');
+        toggleNavbarButton.textContent = '⬅'; 
     }
 }
 

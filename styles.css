@@ -33,8 +33,7 @@ body {
 }
 
 body.light-mode {
-    background: #f8f9fa;
-    color: #212529;
+    background: white;
 }
 
 body.light-mode .navbar {
@@ -98,8 +97,9 @@ body.light-mode .cursor-trail {
 }
 
 body.light-mode .btn-primary {
-    background: #212529;
-    color: #f8f9fa;
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(33, 37, 41, 0.3);
 }
 
 body.light-mode .btn-secondary {
@@ -150,6 +150,12 @@ body.light-mode .achievement-tag {
 body.light-mode .achievement-tag:hover {
     background: #212529;
     color: #f8f9fa;
+}
+body.light-mode .hero,
+body.light-mode .about,
+body.light-mode .projects,
+body.light-mode .contact {  
+    background: #ffffff !important;
 }
 
 .cursor {
@@ -855,7 +861,20 @@ body.light-mode .achievement-tag:hover {
     margin: 0 auto;
     box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
 }
-
+body.light-mode .contact-form {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid;
+    padding: 4rem;
+    border-radius: 20px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: var(--transition-smooth);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+}
 .form-group {
     margin-bottom: 2rem;
 }
@@ -873,6 +892,19 @@ body.light-mode .achievement-tag:hover {
     width: 100%;
     padding: 15px 20px;
     border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--light-text);
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+    backdrop-filter: blur(10px);
+    font-size: 1.1rem;
+}
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid rgba(33, 37, 41, 0.1);
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
     color: var(--light-text);
@@ -1089,6 +1121,7 @@ textarea {
         border: 1px solid rgba(255, 255, 255, 0.1);
         color: #f8f9fa;
     }
+    
 
     body.light-mode .bottom-navbar {
         background: #ffffff;
@@ -1107,6 +1140,7 @@ textarea {
         align-items: center;
         font-size: 0.8rem;
         transition: var(--transition-smooth);
+        color:white;
     }
 
     body.light-mode .bottom-navbar a {
@@ -1605,18 +1639,21 @@ textarea {
     align-items: center;
     gap: 1rem;
     border-top: inherit;
-    padding: 0.3rem;
+    border-radius: 30px;
     background-color: inherit;
     transition: width 0.3s ease, padding 0.3s ease;
-    width: 100%; /* Default full width */
-    padding: 0.5rem 1rem;
+    width: 100%;
+    padding: 0.5rem 0.5rem;
     flex-wrap: wrap;
+    -webkit-text-fill-color: inherit;
 }
 
 .bottom-navbar.minimized {
-    width: 50px; /* Minimized width */
-    padding: 0.5rem 0.5rem;
-    overflow: hidden; /* Hide content when minimized */
+    position: fixed;
+    width: 40px; 
+    height: 40px;
+    border-radius:50%;
+    align-items: center;
 }
 
 .bottom-navbar.minimized a,
@@ -1626,7 +1663,10 @@ textarea {
 
 .bottom-navbar .toggle-navbar-btn {
     position: flex;
-    right: 0;
+    border-radius: 50px;
+    height:20px;
+    bottom:20px;
+    left:20px;
 }
 
 .bottom-navbar .divider {
@@ -1636,11 +1676,13 @@ textarea {
 
 .toggle-navbar-btn {
     background-color: inherit;
-    color: white;
+    bottom: 20px;
+    right:20px;
+    color: inherit;
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    border-radius: 20%;
+    border-radius: 50%;
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -1649,5 +1691,10 @@ textarea {
 }
 
 .toggle-navbar-btn:hover {
-    background-color: black;
+    background-color: inherit;
+    border-radius: 50%;
+}
+body.light-mode * {
+  -webkit-text-fill-color: initial !important;
+  color: #212529 !important;
 }
