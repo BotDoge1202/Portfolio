@@ -218,7 +218,6 @@ toggleButton.style.color = 'white';
 toggleButton.style.display = 'flex';
 toggleButton.style.alignItems = 'center';
 toggleButton.style.justifyContent = 'center';
-toggleButton.style.cursor = 'pointer';
 toggleButton.style.zIndex = '1000';
 toggleButton.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
 document.body.appendChild(toggleButton);
@@ -228,20 +227,18 @@ toggleButton.addEventListener('click', () => {
     toggleButton.innerHTML = document.body.classList.contains('light-mode') ? '☀️' : '🌙'; // Switch icon
 });
 
-// Back to Top Button
-const backToTopButton = document.getElementById('backToTop');
 
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.classList.add('visible');
+function toggleNavbarVisibility() {
+    const bottomNavbar = document.querySelector('.bottom-navbar');
+    const toggleNavbarButton = document.getElementById('toggleNavbar');
+
+    if (bottomNavbar.classList.contains('minimized')) {
+        bottomNavbar.classList.remove('minimized');
+        toggleNavbarButton.textContent = '⬅'; // Arrow pointing right
     } else {
-        backToTopButton.classList.remove('visible');
+        bottomNavbar.classList.add('minimized');
+        toggleNavbarButton.textContent = '➡'; // Arrow pointing left
     }
-});
+}
 
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
+document.getElementById('toggleNavbar').addEventListener('click', toggleNavbarVisibility());
